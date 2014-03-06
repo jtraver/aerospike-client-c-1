@@ -15,6 +15,11 @@
  		__local->__field : \
 		(__global.__field ? __global.__field : __default))
 
+#define as_policy_resolve_bool(__field, __global, __local, __default) \
+ 	(__local && __local->__field != AS_POLICY_BOOL_UNDEF ? \
+ 		__local->__field : \
+		(__global.__field != AS_POLICY_BOOL_UNDEF ? __global.__field : __default))
+
 /******************************************************************************
  *	FUNCTIONS
  *****************************************************************************/
